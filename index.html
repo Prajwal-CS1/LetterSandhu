@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,8 @@
             --dark-bg: #1a1a2e;
         }
 
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -66,13 +68,20 @@
             color: #fff;
             font-size: 4rem;
             margin: 0 0 30px 0;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             animation: bounce 2s infinite ease-in-out;
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .open-btn {
@@ -85,17 +94,11 @@
             font-family: 'Outfit', sans-serif;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s, box-shadow 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .open-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
-            color: var(--primary-red);
         }
 
         /* Opened Letter */
@@ -123,9 +126,10 @@
             position: relative;
         }
 
+        /* Task: To Sandhya in Red */
         .recipient {
             font-size: 1.8rem;
-            color: var(--primary-blue);
+            color: var(--primary-red);
             text-align: left;
             margin-bottom: 25px;
             font-weight: bold;
@@ -138,38 +142,26 @@
             max-width: 300px;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             margin: 0 auto 20px auto;
             display: block;
             border: 4px solid #fff;
             outline: 3px dashed var(--primary-red);
             outline-offset: 4px;
-            transition: transform 0.3s;
-        }
-
-        .cat-image:hover {
-            transform: scale(1.02) rotate(2deg);
         }
 
         .fancy-text {
             font-family: 'Dancing Script', cursive;
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: var(--primary-red);
             margin: 30px 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             line-height: 1.2;
             background: linear-gradient(90deg, var(--primary-red), var(--primary-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
+        /* Task: From Prajwal in Blue */
         .sender {
             font-size: 1.2rem;
             color: #555;
@@ -185,7 +177,6 @@
             font-style: normal;
         }
 
-        /* Floating particles for bg */
         .particle {
             position: absolute;
             border-radius: 50%;
@@ -195,24 +186,34 @@
         }
 
         @keyframes float {
-            0% { transform: translateY(100vh) scale(0) rotate(0deg); opacity: 0; }
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-            100% { transform: translateY(-100px) scale(1.5) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translateY(100vh) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) scale(1.5) rotate(360deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Background Particles -->
-    <div class="particle" style="width: 20px; height: 20px; left: 10%; animation-duration: 8s;"></div>
-    <div class="particle" style="width: 35px; height: 35px; left: 30%; animation-duration: 12s; animation-delay: 2s;"></div>
-    <div class="particle" style="width: 15px; height: 15px; left: 70%; animation-duration: 6s; animation-delay: 1s;"></div>
-    <div class="particle" style="width: 40px; height: 40px; left: 85%; animation-duration: 15s; animation-delay: 4s;"></div>
-    <div class="particle" style="width: 25px; height: 25px; left: 50%; animation-duration: 10s; animation-delay: 3s;"></div>
+    <audio id="bgMusic" loop>
+        <source src="Cigarettes_After_Sex_-_Sunsets_(mp3.pm).mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="particle" style="width: 20px; height: 20px; left: 10%;"></div>
+    <div class="particle" style="width: 35px; height: 35px; left: 30%; animation-delay: 2s;"></div>
+    <div class="particle" style="width: 15px; height: 15px; left: 70%; animation-delay: 1s;"></div>
 
     <div class="container">
-        <!-- Envelope View -->
         <div class="envelope" id="envelope" onclick="openLetter()">
             <h1>💌</h1>
             <button class="open-btn">
@@ -220,14 +221,13 @@
             </button>
         </div>
 
-        <!-- Opened Letter View -->
         <div class="letter-content" id="letter">
             <div class="recipient">To, Sandhya</div>
-            
+
             <img src="cat.png" alt="Funny Cat" class="cat-image" id="cat-img">
-            
-            <div class="fancy-text">sandhya is gay</div>
-            
+
+            <div class="fancy-text">sandhya is gay <br> (you are stil gay) </br> </div>
+
             <div class="sender">
                 From,<br>
                 <strong>Prajwal</strong>
@@ -239,21 +239,24 @@
         function openLetter() {
             const envelope = document.getElementById('envelope');
             const letter = document.getElementById('letter');
-            
-            // Add animation classes
+            const music = document.getElementById('bgMusic');
+
+            // Play the music
+            music.play().catch(error => {
+                console.log("Autoplay blocked or file not found:", error);
+            });
+
             envelope.classList.add('open-animation');
-            
-            // Show new letter after a slight delay
+
             setTimeout(() => {
                 letter.classList.add('show');
                 createConfetti();
             }, 300);
         }
 
-        // Fun confetti effect on open
         function createConfetti() {
             const colors = ['#ff3b30', '#007aff', '#ffffff'];
-            for(let i=0; i<60; i++) {
+            for (let i = 0; i < 60; i++) {
                 const confetti = document.createElement('div');
                 confetti.style.position = 'absolute';
                 confetti.style.width = Math.random() * 10 + 5 + 'px';
@@ -261,24 +264,20 @@
                 confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                 confetti.style.left = Math.random() * 100 + 'vw';
                 confetti.style.top = '-10px';
-                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
                 confetti.style.zIndex = '9999';
                 confetti.style.transition = 'all 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                
+
                 document.body.appendChild(confetti);
-                
-                // Animate
+
                 setTimeout(() => {
                     confetti.style.transform = `translate(${Math.random() * 200 - 100}px, ${window.innerHeight + 100}px) rotate(${Math.random() * 720}deg)`;
                     confetti.style.opacity = '0';
                 }, 50);
 
-                // Cleanup
-                setTimeout(() => {
-                    confetti.remove();
-                }, 2550);
+                setTimeout(() => { confetti.remove(); }, 2550);
             }
         }
     </script>
 </body>
+
 </html>
